@@ -5,7 +5,6 @@ function Login({ setLoginState }) {
 
   const handleChange = (e) => {
     const inputValue = e.target.value;
-    // setName(e.target.value);  setStateの中でイベント系を呼ぶのはNG →必ず外で処理
     setName(inputValue);
   };
 

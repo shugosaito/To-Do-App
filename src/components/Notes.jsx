@@ -3,7 +3,7 @@ import Note from "./Note";
 import InputArea from "./InputArea";
 
 function Notes() {
-  const [notes, setNotes] = useState([]); //save new note in this array
+  const [notes, setNotes] = useState([]);
 
   const addNote = (newNote) => {
     setNotes((prevNotes) => {
@@ -13,7 +13,6 @@ function Notes() {
 
   const deleteNote = (id) => {
     setNotes((prevNotes) => {
-      //need to return to set notes with new value
       return prevNotes.filter((prevNote, index) => {
         return index !== id;
       });
@@ -27,12 +26,7 @@ function Notes() {
 
       <div className="noteWrapper">
         {notes.map((note, index) => (
-          <Note
-            key={index}
-            id={index}
-            note={note}
-            handleDelete={deleteNote}
-          />
+          <Note key={index} id={index} note={note} handleDelete={deleteNote} />
         ))}
       </div>
     </div>

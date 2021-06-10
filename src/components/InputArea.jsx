@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-//一番関連のあるコンポーネント内で関数やフックを記述(inputValueなど)
-
 function InputArea({ addNote }) {
   const [note, setNote] = useState({
     title: "",
@@ -9,13 +7,12 @@ function InputArea({ addNote }) {
   });
 
   const handleChange = (e) => {
-    //e.target.value & e.target.nameの二つ使うからdestructuringでまとめる && nameを使うことでどちらのinputか判別できる
     const { name, value } = e.target;
 
     setNote((prevValue) => {
       return {
         ...prevValue,
-        [name]: value, //prevValueの[name]のみ値を更新 && object's key as variable→[variable]
+        [name]: value,
       };
     });
   };
